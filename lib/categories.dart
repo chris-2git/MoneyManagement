@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/expensecat.dart';
+import 'package:flutter_application_1/incomecat.dart';
 
 class Categories extends StatefulWidget {
   const Categories({super.key});
@@ -25,6 +27,7 @@ class _CategoriesState extends State<Categories>
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return DefaultTabController(
       length: 2,
       child: Scaffold(
@@ -46,8 +49,8 @@ class _CategoriesState extends State<Categories>
         body: TabBarView(
           controller: _tabController,
           children: [
-            Center(child: Text('Income Content')),
-            Center(child: Text('Expense Content')),
+            Incomecat(),
+            Expensecat(),
           ],
         ),
       ),
